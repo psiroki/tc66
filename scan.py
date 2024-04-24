@@ -13,7 +13,7 @@ class ScanDelegate(DefaultDelegate):
         name = dev.getValueText(9)
         if isNewDev:
             if name is not None:
-                if name is not 'None':
+                if name != 'None':
                     print(f'Discovered device \t{ dev.addr} | {name}')
 
 
