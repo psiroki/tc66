@@ -1,3 +1,24 @@
+# TC66
+I took a TC66C tool and repurposed it to use the USB serial interface. Connect the device, figure out what tty it appears as (e.g. `/dev/ttyACM0`), and
+pass that device as a parameter. Your user may not be able to access the device, check the device group and add your user to that group.
+
+```
+usage: tc66_poll.py [-h] [-t] [-x] [-d] tty_dev
+
+Polls the connected TC66/TC66C device via USB
+
+positional arguments:
+  tty_dev     Path to the serial TTY device
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -t, --tsv   Output a nice table in TSV format
+  -x, --hex   Dump the raw packets in hex
+  -d, --diff  Hex dump contains only changed values
+```
+
+The old `scan.py` is still accessible, and functions as it used to be, it doesn't have the formatting options, or any options for that matter.
+
 # TC66C
 Messing around with the TC66C from RDK from python
 
